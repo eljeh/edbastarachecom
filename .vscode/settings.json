@@ -1,0 +1,28 @@
+{
+	"liveSassCompile.settings.excludeList": [
+		"**/node_modules/**",
+		".vscode/**",
+		"_*.scss"
+	],
+	"liveSassCompile.settings.formats": [
+		{
+			//"format": "compressed",
+			"format": "expanded",
+			"extensionName": ".min.css",
+			"savePath": "./assests/css/"
+		},
+	],
+	"liveSassCompile.settings.generateMap": false,
+	"liveSassCompile.settings.autoprefix": [
+		"> 1%",
+		"last 2 versions"
+	],
+	"spellright.language": [
+		"en"
+	],
+	"spellright.documentTypes": [
+		"markdown",
+		"latex",
+		"plaintext"
+	],
+}

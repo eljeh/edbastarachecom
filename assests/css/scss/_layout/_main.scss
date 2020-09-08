@@ -1,0 +1,58 @@
+// '/assests/css/scss/_layout/_main.scss'
+
+main {
+  min-height: 200vh;
+  margin: 0;
+
+  &:before,
+  &:after {
+    position: absolute;
+    left: 0vw;
+    right: 0vw;
+    height: 50px;
+    //width: 100vw;
+    content: "";
+    background-image: var(--headerWaveImage);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    transform: scaleX(-1);
+  }
+
+  &:after {
+    height: 50px;
+    margin-top: -3.2vh;
+    transform: scaleY(-1);
+  }
+
+  &>section {
+    &.colored {
+      background-color: var(--pageBGColor);
+
+      &:before,
+      &:after {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 100px;
+        content: "";
+        background-image: var(--coloredWaveImage);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
+        transform: scaleY(-1);
+      }
+
+      &:before {
+        margin-top: -11vh;
+      }
+
+      &:after {
+        margin-top: 4vh;
+        transform: scaleY(1);
+        transform: scaleX(-1);
+
+      }
+    }
+  }
+}

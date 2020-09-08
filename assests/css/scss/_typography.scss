@@ -1,0 +1,47 @@
+// '/assests/css/scss/_typography.scss'
+
+html,
+body {
+  font-family: var(--bodyFontFamily);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--headerFontFamily);
+}
+
+small {
+  font-size: 0.75em;
+}
+
+html {
+  font-size: calc(var(--defaultFont) / 1.618);
+}
+
+@media screen and (min-width: 1080px) {
+  html {
+    font-size: calc(var(--defaultFont) / calc(1.618*3));
+  }
+
+  h1 {
+    font-size: calc(var(--defaultFont) / calc(1.618*1));
+  }
+
+  h2 {
+    font-size: calc(var(--defaultFont) / calc(1.618*1.5));
+  }
+
+  h3 {
+    font-size: calc(var(--defaultFont) / calc(1.618*2));
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: calc(var(--defaultFont) / calc(1.618*3));
+  }
+}
