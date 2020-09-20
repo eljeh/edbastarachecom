@@ -44,7 +44,10 @@ main {
       }
 
       &:before {
-        margin-top: -11vh;
+        @media screen and (min-width: 1080px) {
+          margin-top: -11vh;
+        }
+
       }
 
       &:after {

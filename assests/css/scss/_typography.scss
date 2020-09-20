@@ -19,7 +19,7 @@ small {
 }
 
 html {
-  font-size: calc(var(--defaultFont) / 1.618);
+  font-size: calc(var(--defaultFont) / 1.618*1.25);
 }
 
 @media screen and (min-width: 1080px) {

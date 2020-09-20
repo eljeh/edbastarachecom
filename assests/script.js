@@ -1,13 +1,39 @@
 
 
 window.addEventListener('DOMContentLoaded', () => {
+	
+	function getViewportWidth() {
+		if (window.innerWidth) {
+			return window.innerWidth;
+		}
+		else if (document.body && document.body.offsetWidth) {
+			return document.body.offsetWidth;
+		}
+		else {
+			return 0;
+		}
+	}
+
+	function getViewportHeight() {
+		if (window.innerHeight) {
+			return window.innerHeight;
+		}
+		else if (document.body && document.body.offsetHeight) {
+			return document.body.offsetHeight;
+		}
+		else {
+			return 0;
+		}
+	}
 
 	//add Fixed to banner when scrolled to top
 	const header = document.querySelector('header');
 	const banner = document.querySelector('#banner');
 	const nav = document.querySelector('nav');
 	const bannerOffset = '-' + banner.offsetTop + 'px';
-	const bannerOptions = { root: null, threshold: 0, rootMargin: bannerOffset };
+	const bannerMobileptions = { root: null, threshold: 0, rootMargin: "0px" };
+	const bannerDesktopOptions = { root: null, threshold: 0, rootMargin: bannerOffset };
+	let bannerOptions = (getViewportWidth() > 1079) ? bannerDesktopOptions : bannerMobileptions;
 	const bannerObserver = new IntersectionObserver((entries) => {
 		entries.forEach(entry => {
 			if (entry.isIntersecting) {
@@ -33,7 +59,6 @@ window.addEventListener('DOMContentLoaded', () => {
 			}
 		});
 	}, navLinkOptions);
-	navItem.forEach(navItem => { navLinkObserver.observe(navItem); });
 
 
 	//add 'active class' to nav items when section in view
@@ -44,11 +69,28 @@ window.addEventListener('DOMContentLoaded', () => {
 			const id = entry.target.getAttribute('id');
 			if (entry.intersectionRatio > 0) {
 				document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
+				document.getElementById('navToggle').checked = false;
 			} else {
 				document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
 			}
 		});
 	}, activeNavOptions);
-	sectionID.forEach((section) => { observer.observe(section); });
+
+
+	window.onload = function () {
+		if (getViewportWidth() > 1079) {
+			bannerObserver.observe(header);
+			navItem.forEach(navItem => { navLinkObserver.observe(navItem); });
+			sectionID.forEach((section) => { observer.observe(section); });
+		}
+	}
+
+	window.onresize = function () {
+		if (getViewportWidth() > 1079) {
+			bannerObserver.observe(header);
+			navItem.forEach(navItem => { navLinkObserver.observe(navItem); });
+			sectionID.forEach((section) => { observer.observe(section); });
+		}
+	}
 
 });
