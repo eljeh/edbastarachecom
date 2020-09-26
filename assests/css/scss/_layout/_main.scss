@@ -9,14 +9,17 @@ main {
     position: absolute;
     left: 0vw;
     right: 0vw;
-    height: 50px;
-    //width: 100vw;
+    height: 11px;
     content: "";
     background-image: var(--headerWaveImage);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
     transform: scaleX(-1);
+
+    @media screen and (min-width: 1080px) {
+      height: 3.1vh;
+    }
   }
 
   &:after {

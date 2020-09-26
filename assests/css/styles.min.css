@@ -495,13 +495,13 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 10vh;
   width: 100%;
 }
 
 @media screen and (min-width: 1080px) {
   .header .banner {
-    padding: 0 8vw;
+    padding: 0 4vw 0 6vw;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -514,7 +514,7 @@ body {
 }
 
 .header .banner .banner-title {
-  margin-top: 1.5rem;
+  margin-top: 1.5vh;
   -ms-grid-column-align: center;
       justify-self: center;
   -ms-flex-item-align: center;
@@ -523,8 +523,12 @@ body {
   z-index: 2;
   -webkit-transform: scale(1.35);
           transform: scale(1.35);
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+}
+
+@media screen and (min-width: 1080px) {
+  .header .banner .banner-title {
+    margin-left: 3vw;
+  }
 }
 
 .header .banner .banner-title small {
@@ -565,11 +569,11 @@ body {
 .header .banner.fixed svg {
   display: block;
   position: absolute;
-  top: 60px;
+  top: 10vh;
   left: 0;
   right: 0;
-  -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
+  -webkit-transform: scaleX(-1.1);
+          transform: scaleX(-1.1);
 }
 
 .header .banner.fixed svg path {
@@ -734,7 +738,7 @@ body {
 
 @media screen and (min-width: 1080px) {
   .header .banner nav .navList .navItem {
-    margin: 4px;
+    margin: 0 1vw 0;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
@@ -824,7 +828,6 @@ body {
   display: inline;
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
   min-width: 48px;
   min-height: 48px;
   color: var(--primaryAlphaColor);
@@ -868,6 +871,11 @@ body {
   transition: all 0.5s linear 0.5s;
 }
 
+header1,
+.banner1 {
+  background-color: transparent !important;
+}
+
 main {
   min-height: 200vh;
   margin: 0;
@@ -877,7 +885,7 @@ main:before, main:after {
   position: absolute;
   left: 0vw;
   right: 0vw;
-  height: 50px;
+  height: 11px;
   content: "";
   background-image: var(--headerWaveImage);
   background-repeat: no-repeat;
@@ -885,6 +893,12 @@ main:before, main:after {
   background-position: bottom;
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
+}
+
+@media screen and (min-width: 1080px) {
+  main:before, main:after {
+    height: 3.1vh;
+  }
 }
 
 main:after {

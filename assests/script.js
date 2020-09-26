@@ -1,7 +1,7 @@
 
 
 window.addEventListener('DOMContentLoaded', () => {
-	
+
 	function getViewportWidth() {
 		if (window.innerWidth) {
 			return window.innerWidth;
@@ -31,7 +31,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	const banner = document.querySelector('#banner');
 	const nav = document.querySelector('nav');
 	const bannerOffset = '-' + banner.offsetTop + 'px';
-	const bannerMobileptions = { root: null, threshold: 0, rootMargin: "0px" };
+	const bannerMobileptions = { root: null, threshold: 0, rootMargin: "-53% 0px 0px" };
 	const bannerDesktopOptions = { root: null, threshold: 0, rootMargin: bannerOffset };
 	let bannerOptions = (getViewportWidth() > 1079) ? bannerDesktopOptions : bannerMobileptions;
 	const bannerObserver = new IntersectionObserver((entries) => {
@@ -82,7 +82,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			bannerObserver.observe(header);
 			navItem.forEach(navItem => { navLinkObserver.observe(navItem); });
 			sectionID.forEach((section) => { observer.observe(section); });
-		}
+		} else { }
 	}
 
 	window.onresize = function () {

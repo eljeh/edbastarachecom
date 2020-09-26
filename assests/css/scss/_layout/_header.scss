@@ -25,11 +25,11 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 60px;
+    height: 10vh;
     width: 100%;
 
     @media screen and (min-width: 1080px) {
-      padding: 0 8vw;
+      padding: 0 4vw 0 6vw;
       flex-direction: row;
     }
 
@@ -38,12 +38,15 @@
     }
 
     .banner-title {
-      margin-top: 1.5rem;
+      margin-top: 1.5vh;
       justify-self: center;
       align-self: center;
       z-index: 2;
       transform: scale(1.35);
-      transition: all 0.5s;
+
+      @media screen and (min-width: 1080px) {
+        margin-left: 3vw;
+      }
 
       small {
         display: block;
@@ -77,10 +80,10 @@
       svg {
         display: block;
         position: absolute;
-        top: 60px;
+        top: 10vh;
         left: 0;
         right: 0;
-        transform: scaleX(-1);
+        transform: scaleX(-1.1);
 
         path {
           fill: var(--headerBGColor);
@@ -208,7 +211,7 @@
           font-size: 1rem;
 
           @media screen and (min-width: 1080px) {
-            margin: 4px;
+            margin: 0 1vw 0;
             justify-content: flex-end;
           }
 
@@ -278,7 +281,7 @@
           &.stuck {
             display: inline;
             position: sticky;
-            top: 0;
+            //top: 0;
             min-width: 48px;
             min-height: 48px;
             color: var(--primaryAlphaColor);
@@ -326,4 +329,9 @@
     transition: all 0.5s linear 0.5s;
   }
 
+}
+
+header1,
+.banner1 {
+  background-color: transparent !important;
 }
