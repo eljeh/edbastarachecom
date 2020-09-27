@@ -497,11 +497,13 @@ body {
   right: 0;
   height: 10vh;
   width: 100%;
+  -webkit-transition: all 0.25s ease-out 0.25ms;
+  transition: all 0.25s ease-out 0.25ms;
 }
 
 @media screen and (min-width: 1080px) {
   .header .banner {
-    padding: 0 4vw 0 6vw;
+    padding: 0 12vw 0 15vw;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -523,6 +525,8 @@ body {
   z-index: 2;
   -webkit-transform: scale(1.35);
           transform: scale(1.35);
+  -webkit-transition: all 0.25s ease-out 0.25ms;
+  transition: all 0.25s ease-out 0.25ms;
 }
 
 @media screen and (min-width: 1080px) {
@@ -553,6 +557,12 @@ body {
   width: unset;
 }
 
+@media screen and (min-width: 1080px) {
+  .header .banner.fixed {
+    padding: 0 4vw 0 5vw;
+  }
+}
+
 .header .banner.fixed .banner-title {
   margin-left: 0.75rem;
   -ms-flex-item-align: start;
@@ -560,6 +570,8 @@ body {
       align-self: start;
   -webkit-transform: scale(1);
           transform: scale(1);
+  -webkit-transition: all 0.25s ease-out 0.25ms;
+  transition: all 0.25s ease-out 0.25ms;
 }
 
 .header .banner.fixed .banner-title small {
@@ -871,11 +883,6 @@ body {
   transition: all 0.5s linear 0.5s;
 }
 
-header1,
-.banner1 {
-  background-color: transparent !important;
-}
-
 main {
   min-height: 200vh;
   margin: 0;
@@ -991,16 +998,6 @@ footer .navItem a:hover .text {
   }
 }
 
-.showCase-Card:hover {
-  -webkit-transform: scale(1.125);
-          transform: scale(1.125);
-  border: 1px solid #00000011;
-  -webkit-box-shadow: 0px -3px 11px 4px #00000011;
-          box-shadow: 0px -3px 11px 4px #00000011;
-  cursor: pointer;
-  z-index: 1;
-}
-
 .showCase-Card picture {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1014,6 +1011,8 @@ footer .navItem a:hover .text {
       -ms-flex-align: center;
           align-items: center;
   margin: -4vh -8vh 0;
+  -webkit-transition: all 0.25s ease-out 0.25ms;
+  transition: all 0.25s ease-out 0.25ms;
 }
 
 .showCase-Card picture img {

@@ -30,11 +30,13 @@ window.addEventListener('DOMContentLoaded', () => {
 	const header = document.querySelector('header');
 	const banner = document.querySelector('#banner');
 	const nav = document.querySelector('nav');
-	const bannerOffset = '-' + banner.offsetTop + 'px';
+	//const bannerOffset = '-' + banner.offsetTop + 'px';
+	const bannerOffset = '-53% 0px 0px';
 	const bannerMobileptions = { root: null, threshold: 0, rootMargin: "-53% 0px 0px" };
 	const bannerDesktopOptions = { root: null, threshold: 0, rootMargin: bannerOffset };
 	let bannerOptions = (getViewportWidth() > 1079) ? bannerDesktopOptions : bannerMobileptions;
 	const bannerObserver = new IntersectionObserver((entries) => {
+		console.log(bannerOffset);
 		entries.forEach(entry => {
 			if (entry.isIntersecting) {
 				banner.classList.remove('fixed')
@@ -49,7 +51,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	//add 'Fixed class' to nav items when scrolled to top
 	const navItem = document.querySelectorAll('.navItem');
-	const navLinkOptions = { root: null, threshold: 0, rootMargin: "-120px" };
+	//const navLinkOptions = { root: null, threshold: 0, rootMargin: "-120px" };
+	const navLinkOptions = { root: null, threshold: 0, rootMargin: "-120px 0px -120px" };
 	const navLinkObserver = new IntersectionObserver((entries) => {
 		entries.forEach(entry => {
 			if (entry.isIntersecting) {
